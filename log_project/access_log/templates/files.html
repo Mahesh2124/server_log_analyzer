@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Files</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+<body class="container p-5">
+    <h1>List of Files</h1>
+    <ul>
+        {% for file_path in file_paths %}
+            <li>{{ file_path }}</li>
+        {% endfor %}
+    </ul>
+    <div>
+        {% load crispy_forms_tags %}
+    <form method="post" action="{% url 'analyze_log' %}">
+        {% csrf_token %}
+        <textarea id="file_data" name="file_data" rows="2" cols="50"></textarea><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+</body>
+</html>

@@ -85,7 +85,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'yourdbname',
+#         'USER': 'youruser',
+#         'PASSWORD': 'yourpassword',
+#         'HOST': 'localhost',  # Change this if your PostgreSQL is on a different host
+#         'PORT': '5432',  # Change the port if PostgreSQL is running on a different port
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -126,3 +135,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+

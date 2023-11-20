@@ -10,7 +10,7 @@
   <body>
     {% load crispy_forms_tags %}
     <div class="container p-5">
-      <form action="{% url 'form_render' %}" method="post">
+      <form action="{% url 'server_details' %}" method="post">
         {% csrf_token %}
         <div class="row">
           <div class="col-lg-6 col-md-12">
